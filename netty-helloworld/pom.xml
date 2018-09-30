@@ -5,7 +5,7 @@
     <artifactId>netty-parent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>netty-helloworld-server</artifactId>
+  <artifactId>netty-helloworld</artifactId>
   <dependencies>
   	<dependency>
   		<groupId>io.netty</groupId>

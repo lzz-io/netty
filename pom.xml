@@ -8,7 +8,7 @@
 	<packaging>pom</packaging>
 
 	<modules>
-		<module>netty-helloworld-server</module>
+		<module>netty-helloworld</module>
 	</modules>
 
 	<properties>
