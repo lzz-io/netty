@@ -1,4 +1,4 @@
-package io.lzz.netty.socket;
+package io.lzz.netty.chat;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;

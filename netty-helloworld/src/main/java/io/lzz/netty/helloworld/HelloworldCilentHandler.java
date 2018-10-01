@@ -62,7 +62,7 @@ public class HelloworldCilentHandler extends SimpleChannelInboundHandler<Object>
 	long counter;
 
 	private void generateTraffic() {
-		// Flush the outbound buffer to the socket.
+		// Flush the outbound buffer to the chat.
 		// Once flushed, generate the same amount of traffic again.
 		ctx.writeAndFlush(content.retainedDuplicate()).addListener(trafficGenerator);
 	}

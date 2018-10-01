@@ -1,4 +1,4 @@
-package io.lzz.netty.socket;
+package io.lzz.netty.chat;
 
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
@@ -9,7 +9,7 @@ import io.netty.handler.codec.string.StringDecoder;
 import io.netty.handler.codec.string.StringEncoder;
 import io.netty.util.CharsetUtil;
 
-public class SocketClientInitializer extends ChannelInitializer<SocketChannel> {
+public class SocketServerInitializer extends ChannelInitializer<SocketChannel> {
     @Override
     protected void initChannel(SocketChannel ch) throws Exception {
         ChannelPipeline p = ch.pipeline();
@@ -18,6 +18,6 @@ public class SocketClientInitializer extends ChannelInitializer<SocketChannel> {
         p.addLast(new LengthFieldPrepender(4));
         p.addLast(new StringDecoder(CharsetUtil.UTF_8));
         p.addLast(new StringEncoder(CharsetUtil.UTF_8));
-        p.addLast(new SocketClientHandler());
+        p.addLast(new SocketServerHandler());
     }
 }

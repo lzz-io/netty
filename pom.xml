@@ -9,6 +9,7 @@
 
 	<modules>
 		<module>netty-helloworld</module>
+		<module>netty-chat</module>
 	</modules>
 
 	<properties>

@@ -47,7 +47,7 @@ public class HelloworldServer {
 			// Bind and start to accept incoming connections.
 			ChannelFuture f = b.bind(8080).sync(); // 监听 8080 端口
 
-			// Wait until the server socket is closed.
+			// Wait until the server chat is closed.
 			// In this example, this does not happen, but you can do that to gracefully
 			// shut down your server.
 			f.channel().closeFuture().sync();
