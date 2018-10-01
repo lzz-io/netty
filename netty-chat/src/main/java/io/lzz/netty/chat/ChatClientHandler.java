@@ -1,17 +1,15 @@
-package io.lzz.netty.socket;
+package io.lzz.netty.chat;
 
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 
-import java.util.UUID;
+import java.time.LocalDateTime;
 
-public class SocketServerHandler extends SimpleChannelInboundHandler<String> {
+public class ChatClientHandler extends SimpleChannelInboundHandler<String> {
 
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, String msg) throws Exception {
-        System.out.println(ctx.channel().remoteAddress() + ", " + msg);
-        ctx.channel().writeAndFlush("from server :" + UUID.randomUUID());
-        Thread.sleep(3000);
+        System.err.println(msg);
     }
 
     @Override
