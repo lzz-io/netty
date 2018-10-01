@@ -16,7 +16,6 @@
 
 package io.lzz.netty.helloworld;
 
-import io.netty.channel.ChannelHandler;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 

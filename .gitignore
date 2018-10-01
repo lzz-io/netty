@@ -30,6 +30,7 @@ hs_err_pid*
 *.njsproj
 *.sln
 *.sw*
+*.iml
 #eclipse
 .project
 .settings/
