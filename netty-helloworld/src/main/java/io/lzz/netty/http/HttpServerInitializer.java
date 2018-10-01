@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package io.lzz.netty.helloworld;
+package io.lzz.netty.http;
 
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;

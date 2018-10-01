@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package io.lzz.netty.helloworld;
+package io.lzz.netty.http;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;

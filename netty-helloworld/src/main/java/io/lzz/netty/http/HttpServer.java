@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package io.lzz.netty.helloworld;
+package io.lzz.netty.http;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.ChannelFuture;
