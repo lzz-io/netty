@@ -10,6 +10,7 @@
 	<modules>
 		<module>netty-helloworld</module>
 		<module>netty-chat</module>
+		<module>netty-websocket</module>
 	</modules>
 
 	<properties>
