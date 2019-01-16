@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>io.lzz.netty</groupId>
-    <artifactId>netty-parent</artifactId>
+    <artifactId>netty</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
   <artifactId>netty-websocket</artifactId>
