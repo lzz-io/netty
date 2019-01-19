@@ -12,7 +12,7 @@ public class SocketServerHandler extends SimpleChannelInboundHandler<String> {
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, String msg) throws Exception {
         System.out.println(ctx.channel().remoteAddress() + ", " + msg);
-        ChannelFuture future = ctx.channel().writeAndFlush("from server :" + UUID.randomUUID());
+        ChannelFuture future = ctx.writeAndFlush("from server :" + UUID.randomUUID());
         Thread.sleep(3000);
         future.addListener(ChannelFutureListener.CLOSE);
     }
