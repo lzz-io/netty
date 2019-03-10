@@ -5,5 +5,5 @@
     <artifactId>netty</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>netty-spring</artifactId>
+  <artifactId>netty-proxy</artifactId>
 </project>
