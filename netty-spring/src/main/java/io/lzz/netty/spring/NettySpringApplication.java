@@ -1,12 +1,12 @@
 /*
  * Copyright qq:1219331697
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *     http://www.apache.org/licenses/LICENSE-2.0
- *     
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -16,25 +16,30 @@
 
 package io.lzz.netty.spring;
 
-import io.netty.channel.ChannelHandlerContext;
-import io.netty.channel.SimpleChannelInboundHandler;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * @author q1219331697
- *
  */
-public class HelloworldServerHandler extends SimpleChannelInboundHandler<Object> {
+@SpringBootApplication
+// @RestController
+public class NettySpringApplication {
 
-	@Override
-	public void channelRead0(ChannelHandlerContext ctx, Object msg) throws Exception {
-		// discard
+	public static void main(String[] args) throws Exception {
+		SpringApplication.run(NettySpringApplication.class, args);
 	}
 
-	@Override
-	public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) {
-		// Close the connection when an exception is raised.
-		cause.printStackTrace();
-		ctx.close();
-	}
+	// @Bean
+	// public RouterFunction<ServerResponse> monoRouterFunction(EchoHandler
+	// echoHandler) {
+	// return RouterFunctions.route(RequestPredicates.POST("/echo"),
+	// echoHandler::echo);
+	// }
+	//
+	// @GetMapping("/")
+	// public String welcome() {
+	// return "Hello World";
+	// }
 
 }
