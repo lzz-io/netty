@@ -37,6 +37,8 @@ hs_err_pid*
 .classpath
 target/
 
+tmp/
+
 
 
 
