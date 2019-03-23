@@ -22,6 +22,7 @@ import org.springframework.stereotype.Component;
 
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelFutureListener;
+import io.netty.channel.ChannelHandler.Sharable;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 
@@ -30,6 +31,8 @@ import io.netty.channel.SimpleChannelInboundHandler;
  *
  */
 @Component
+// @Scope("prototype")
+@Sharable
 public class NettySpringServerHandler extends SimpleChannelInboundHandler<String> {
 
 	private static final Logger log = LoggerFactory.getLogger(NettySpringServerHandler.class);
@@ -39,6 +42,7 @@ public class NettySpringServerHandler extends SimpleChannelInboundHandler<String
 		log.info("msg={},ctx={}", msg, ctx);
 		ChannelFuture channelFuture = ctx.writeAndFlush("server pong!");
 		channelFuture.addListener(ChannelFutureListener.CLOSE);
+		Thread.sleep(3000L);
 		log.info("server pong");
 
 	}
