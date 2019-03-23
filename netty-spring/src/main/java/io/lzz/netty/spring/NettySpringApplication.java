@@ -18,39 +18,28 @@ package io.lzz.netty.spring;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import io.lzz.netty.spring.server.NettySpringServer;
 
 /**
  * @author q1219331697
  */
 @SpringBootApplication
-public class NettySpringApplication implements CommandLineRunner {
+public class NettySpringApplication {
 
 	private static final Logger log = LoggerFactory.getLogger(NettySpringApplication.class);
 
-	@Autowired
-	private NettySpringServer nettySpringServer;
+	// @Autowired
+	// private NettySpringServer nettySpringServer;
 
 	public static void main(String[] args) throws Exception {
 		SpringApplication.run(NettySpringApplication.class, args);
 		log.info("app started");
 	}
 
-	@Override
-	public void run(String... args) throws Exception {
-		new Thread(new Runnable() {
-
-			@Override
-			public void run() {
-				nettySpringServer.run();
-			}
-		}, "netty-server").start();
-
-	}
+	// @Override
+	// public void run(String... args) throws Exception {
+	// new Thread(() -> nettySpringServer.run(), "netty-server").start();
+	// }
 
 }

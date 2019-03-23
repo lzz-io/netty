@@ -16,6 +16,8 @@
 
 package io.lzz.netty.spring.server;
 
+import javax.annotation.PostConstruct;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,6 +44,12 @@ public class NettySpringServer {
 
 	@Autowired
 	private NettySpringServerInitializer nettySpringServerInitializer;
+
+	@PostConstruct
+	public void startServer() {
+		// 使用线程，不阻塞主线程
+		new Thread(() -> run(), "netty-server").start();
+	}
 
 	public void run() {
 		EventLoopGroup bossGroup = new NioEventLoopGroup();
