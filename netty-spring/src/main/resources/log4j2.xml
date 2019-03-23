@@ -2,7 +2,7 @@
 <Configuration status="WARN">
 	<Appenders>
 		<Console name="Console" target="SYSTEM_OUT">
-			<PatternLayout pattern="%d{HH:mm:ss.SSS} [%15.15t,%2.2T] %-5level %-30.30c{1.}[%L,%M] - %msg%n" />
+			<PatternLayout pattern="%d{HH:mm:ss.SSS} [%10.10t,%2.2T] %-5level %-30.30c{1.}[%L,%M] - %msg%n" />
 			<!-- <PatternLayout pattern="%d{HH:mm:ss.SSS} [%15.15t,%2.2T] %-5level %-40.40l{1.} - %msg%n" /> -->
 		</Console>
 	</Appenders>

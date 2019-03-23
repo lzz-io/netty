@@ -1,4 +1,4 @@
-package io.lzz.netty.websocket;
+package io.lzz.netty.chat;
 
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;

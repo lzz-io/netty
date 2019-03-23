@@ -1,4 +1,4 @@
-package io.lzz.netty.websocket;
+package io.lzz.netty.chat;
 
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
@@ -8,7 +8,7 @@ import io.netty.handler.codec.Delimiters;
 import io.netty.handler.codec.string.StringDecoder;
 import io.netty.handler.codec.string.StringEncoder;
 
-public class ChatClientInitializer extends ChannelInitializer<SocketChannel> {
+public class ChatServerInitializer extends ChannelInitializer<SocketChannel> {
     @Override
     protected void initChannel(SocketChannel ch) throws Exception {
         ChannelPipeline pipeline = ch.pipeline();
@@ -17,6 +17,6 @@ public class ChatClientInitializer extends ChannelInitializer<SocketChannel> {
         pipeline.addLast(new StringDecoder());
         pipeline.addLast(new StringEncoder());
 
-        pipeline.addLast(new ChatClientHandler());
+        pipeline.addLast(new ChatServerHandler());
     }
 }
