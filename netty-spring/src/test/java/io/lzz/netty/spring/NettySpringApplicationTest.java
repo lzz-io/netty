@@ -27,16 +27,35 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
+
+import io.lzz.netty.spring.entity.User;
+import io.lzz.netty.spring.repository.UserRepository;
 
 /**
  * @author q1219331697
  *
  */
+@SpringBootTest
+@RunWith(SpringRunner.class)
 public class NettySpringApplicationTest {
 
 	private static final Logger log = LoggerFactory.getLogger(NettySpringApplicationTest.class);
+
+	@Autowired
+	private UserRepository userRepository;
+
+	@Test
+	public void init() {
+		for (int i = 0; i < 10; i++) {
+			userRepository.save(new User(null, "username" + i, "pwd" + i));
+		}
+	}
 
 	@Test
 	public void testMain1() throws Exception {

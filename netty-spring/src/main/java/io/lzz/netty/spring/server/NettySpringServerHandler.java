@@ -16,10 +16,16 @@
 
 package io.lzz.netty.spring.server;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import io.lzz.netty.spring.entity.User;
+import io.lzz.netty.spring.repository.UserRepository;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.ChannelFutureListener;
 import io.netty.channel.ChannelHandler.Sharable;
@@ -37,14 +43,23 @@ public class NettySpringServerHandler extends SimpleChannelInboundHandler<String
 
 	private static final Logger log = LoggerFactory.getLogger(NettySpringServerHandler.class);
 
+	@Autowired
+	private UserRepository userRepository;
+
 	@Override
 	protected void channelRead0(ChannelHandlerContext ctx, String msg) throws Exception {
 		log.info("msg={},ctx={}", msg, ctx);
-		ChannelFuture channelFuture = ctx.writeAndFlush("server pong!");
-		channelFuture.addListener(ChannelFutureListener.CLOSE);
 		Thread.sleep(3000L);
 		log.info("server pong");
 
+		List<Long> ids = new ArrayList<>();
+		List<User> users = userRepository.findAll();
+		users.forEach(item -> {
+			ids.add(item.getId());
+		});
+
+		ChannelFuture channelFuture = ctx.writeAndFlush("server pong!" + ids.toString());
+		channelFuture.addListener(ChannelFutureListener.CLOSE);
 	}
 
 	@Override
